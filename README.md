@@ -29,3 +29,4 @@ The design is organized into multiple schematic sheets to keep the system modula
 - Debug/programming support for STM32 development
 - Modular Altium schematic structure
 - PCB layout and manufacturing output files included
+<img width="1917" height="1195" alt="image" src="https://github.com/user-attachments/assets/e4d7573b-5ef1-4e80-b1c8-d9a3e1609e31" />
