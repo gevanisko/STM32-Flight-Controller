@@ -115,18 +115,18 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_I2C2_Init();
-  MX_I2C4_Init();
-  MX_SPI1_Init();
-  MX_SPI4_Init();
-  MX_SPI5_Init();
-  MX_USB_OTG_FS_USB_Init();
-  MX_UART4_Init();
-  MX_SPI6_Init();
-  MX_QUADSPI_Init();
-  MX_USART3_UART_Init();
-  MX_RTC_Init();
+  MX_GPIO_Init(); //GPIO
+  MX_I2C2_Init(); //GPS I2C
+  MX_I2C4_Init(); //Accelometer I2C 
+  MX_SPI1_Init(); //IMU
+  MX_SPI4_Init(); //barometer
+  MX_SPI5_Init(); //magnetometr
+  MX_USB_OTG_FS_USB_Init(); //USB FS
+  MX_UART4_Init(); //LoRa
+  MX_SPI6_Init(); //backup barometer
+  MX_QUADSPI_Init(); //64 Mbit Quad Flash
+  MX_USART3_UART_Init(); //debug (doesnt work)
+  MX_RTC_Init(); //real time clock
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -363,7 +363,7 @@ static void MX_RTC_Init(void)
 }
 
 /**
-  * @brief SPI1 Initialization Function
+  * @brief SPI1 Initialization Function - IMU
   * @param None
   * @retval None
   */
@@ -461,7 +461,7 @@ static void MX_SPI5_Init(void)
   hspi5.Instance = SPI5;
   hspi5.Init.Mode = SPI_MODE_MASTER;
   hspi5.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi5.Init.DataSize = SPI_DATASIZE_4BIT;
+  hspi5.Init.DataSize = SPI_DATASIZE_8BIT;
   hspi5.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi5.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi5.Init.NSS = SPI_NSS_HARD_OUTPUT;
